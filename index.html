@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<!--
+  PORTFOLIO EUTCH PRÉSENCE BITSINDOU
+  Utilisation :
+  1. Copier tout ce fichier dans le Bloc-notes / Notepad.
+  2. Enregistrer sous : index.html
+  3. Type : Tous les fichiers
+  4. Encodage : UTF-8
+  5. Ouvrir index.html dans Chrome, Edge ou Firefox.
+  La page fonctionne sans style.css ni script.js séparés.
+  Pour afficher la photo, placer profil.jpeg dans un dossier assets à côté de index.html.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Eutch Présence BITSINDOU | Actuariat, Data & Gestion des risques</title>
+  <meta name="description" content="Portfolio de Eutch Présence BITSINDOU, étudiant en Master 2 Actuariat à l'ENSAR, en passerelle ENSAR-CNAM et alternant chez MAAF (Covéa). Provisionnement, tarification, GLM, data, projets actuariels et gestion des risques." />
+  <meta name="author" content="Eutch Présence BITSINDOU" />
+  <meta name="theme-color" content="#0b1739" />
+
+  <style>
+    :root{
+      --bg:#07101f;
+      --bg2:#0b1739;
+      --surface:#101d35;
+      --surface2:#132341;
+      --text:#f6f8fc;
+      --muted:#b8c2d7;
+      --primary:#5cd6c0;
+      --primary2:#7de3d1;
+      --accent:#ffcc66;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 18px 55px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(92,214,192,.12), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(255,204,102,.08), transparent 24%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+
+    .container{
+      width:min(calc(100% - 36px), var(--max));
+      margin:auto;
+    }
+
+    .section{
+      padding:96px 0;
+      scroll-margin-top:92px;
+    }
+
+    .section.soft{
+      background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.035));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary2);
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:30px;height:2px;
+      background:var(--primary);
+      border-radius:999px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:38px;
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem,4vw,3.2rem);
+      line-height:1.05;
+      margin:.45rem 0 0;
+      letter-spacing:-.045em;
+    }
+
+    .section-title p{
+      max-width:560px;
+      color:var(--muted);
+      margin:0;
+    }
+
+    /* NAV */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(18px);
+      background:rgba(7,16,31,.82);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:max-content;
+    }
+
+    .logo-mark{
+      display:grid;
+      place-items:center;
+      width:42px;height:42px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),#85f0de);
+      color:#07101f;
+      font-weight:950;
+      letter-spacing:-.04em;
+    }
+
+    .logo strong,.logo small{display:block}
+    .logo strong{font-size:.98rem}
+    .logo small{color:var(--muted);font-size:.70rem;letter-spacing:.12em}
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:22px;
+    }
+
+    nav a{
+      color:#dbe3f1;
+      font-size:.92rem;
+      font-weight:650;
+      transition:.2s ease;
+    }
+    nav a:hover,nav a.active{color:var(--primary2)}
+
+    .menu-btn{
+      display:none;
+      color:var(--text);
+      background:transparent;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:8px 11px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 74px);
+      display:flex;
+      align-items:center;
+      padding:74px 0 86px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .availability{
+      display:inline-flex;
+      gap:9px;
+      align-items:center;
+      color:#dfe8f6;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.84rem;
+    }
+
+    .availability i{
+      width:9px;height:9px;
+      background:var(--primary);
+      border-radius:50%;
+      box-shadow:0 0 0 6px rgba(92,214,192,.12);
+    }
+
+    h1{
+      font-size:clamp(3.1rem,7vw,6.6rem);
+      line-height:.92;
+      letter-spacing:-.065em;
+      margin:22px 0 22px;
+    }
+
+    .hero h2{
+      margin:0 0 18px;
+      font-size:clamp(1.25rem,2.5vw,1.9rem);
+      color:var(--primary2);
+      font-weight:750;
+    }
+
+    .hero p{
+      max-width:760px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:13px;
+      border:1px solid var(--line);
+      font-weight:800;
+      transition:transform .2s ease, background .2s ease, border .2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{
+      color:#07101f;
+      background:var(--primary);
+      border-color:var(--primary);
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.035);
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:34px;
+      color:#dbe3f1;
+      font-size:.90rem;
+    }
+
+    .hero-proof span{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .hero-proof b{color:var(--accent)}
+
+    .portrait-card{
+      position:relative;
+      max-width:430px;
+      margin-inline:auto;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:14px;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
+    }
+
+    .portrait-card::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      z-index:-1;
+      border-radius:38px;
+      background:radial-gradient(circle at 25% 20%,rgba(92,214,192,.25),transparent 45%);
+    }
+
+    .portrait-card img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      border-radius:22px;
+    }
+
+    .mini-card{
+      position:absolute;
+      left:-28px;
+      bottom:28px;
+      width:min(260px,72%);
+      background:rgba(11,23,57,.94);
+      backdrop-filter:blur(14px);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+      box-shadow:var(--shadow);
+    }
+
+    .mini-card strong{display:block;margin-bottom:3px}
+    .mini-card span{color:var(--muted);font-size:.84rem}
+
+    /* METRICS */
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      margin-top:-22px;
+      background:rgba(255,255,255,.026);
+    }
+
+    .metric{
+      padding:23px;
+      min-height:132px;
+      border-right:1px solid var(--line);
+    }
+    .metric:last-child{border-right:none}
+    .metric strong{
+      display:block;
+      font-size:1.15rem;
+      color:var(--text);
+      margin-bottom:6px;
+    }
+    .metric span{color:var(--muted);font-size:.90rem}
+
+    /* CARDS */
+    .grid-3,.grid-2{
+      display:grid;
+      gap:20px;
+    }
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+
+    .card,.project-card,.skill-card,.experience-main,.contact-card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(155deg,rgba(255,255,255,.052),rgba(255,255,255,.018));
+      box-shadow:0 12px 38px rgba(0,0,0,.14);
+    }
+
+    .card,.skill-card,.project-card{padding:26px}
+    .card h3,.skill-card h3,.project-card h3{margin:0 0 10px}
+    .card p,.project-card p{color:var(--muted);margin-bottom:0}
+
+    .icon{
+      width:46px;height:46px;
+      display:grid;place-items:center;
+      border-radius:14px;
+      background:rgba(92,214,192,.09);
+      color:var(--primary2);
+      border:1px solid rgba(92,214,192,.2);
+      font-size:1.25rem;
+      margin-bottom:18px;
+    }
+
+    .highlight{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:30px;
+      margin-top:24px;
+      padding:30px;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,rgba(92,214,192,.10),rgba(255,204,102,.05));
+      border:1px solid rgba(92,214,192,.18);
+    }
+
+    .highlight h3{font-size:1.7rem;margin:0}
+    .highlight p{color:#d7dfed;margin:0}
+
+    /* TIMELINE */
+    .timeline{
+      position:relative;
+      display:grid;
+      gap:16px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:18px;
+      top:16px;bottom:16px;
+      width:2px;
+      background:linear-gradient(var(--primary),rgba(92,214,192,.06));
+    }
+
+    .timeline-item{
+      position:relative;
+      margin-left:52px;
+      padding:20px 22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.028);
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-43px;
+      top:25px;
+      width:13px;height:13px;
+      background:var(--primary);
+      border-radius:50%;
+      box-shadow:0 0 0 6px rgba(92,214,192,.10);
+    }
+
+    .timeline-item h3{margin:5px 0 3px}
+    .timeline-item p{margin:0;color:var(--muted)}
+    .year{
+      color:var(--primary2);
+      font-weight:850;
+      font-size:.82rem;
+    }
+
+    /* EXPERIENCE */
+    .experience-main{
+      padding:30px;
+      display:grid;
+      gap:28px;
+      grid-template-columns:.85fr 1.15fr;
+      margin-bottom:20px;
+    }
+
+    .company{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(92,214,192,.1);
+      color:var(--primary2);
+      font-weight:850;
+      font-size:.82rem;
+      margin-bottom:12px;
+    }
+
+    .experience-main h3{
+      font-size:1.65rem;
+      line-height:1.15;
+      margin:0 0 7px;
+    }
+
+    .date{color:var(--accent)!important;font-size:.90rem}
+    .experience-main p{color:var(--muted)}
+    .mission-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .mission-grid>div{
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.02);
+    }
+    .mission-grid h4{margin:0 0 10px}
+    .mission-grid ul{
+      margin:0;padding-left:19px;color:var(--muted)
+    }
+
+    /* PROJECTS */
+    .project-card{
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease,border-color .25s ease;
+    }
+    .project-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(92,214,192,.32);
+    }
+    .project-number{
+      color:rgba(255,255,255,.16);
+      font-size:3.7rem;
+      font-weight:950;
+      line-height:1;
+      margin-bottom:16px;
+    }
+    .project-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .project-badge{
+      font-size:.72rem;
+      font-weight:800;
+      color:var(--accent);
+      border:1px solid rgba(255,204,102,.25);
+      background:rgba(255,204,102,.06);
+      padding:5px 9px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    .project-outcome{
+      margin:18px 0;
+      padding:14px;
+      border-left:3px solid var(--primary);
+      background:rgba(92,214,192,.055);
+      color:#dfe8f5;
+      font-size:.92rem;
+    }
+
+    .chips,.skill-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chips span,.skill-tags span{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.028);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:.80rem;
+      color:#dde5f2;
+    }
+
+
+    /* PROJECT GROUPS */
+    .project-group{margin-top:44px}
+    .project-group:first-of-type{margin-top:0}
+    .project-group-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}
+    .project-group-head h3{margin:0;font-size:clamp(1.55rem,3vw,2.15rem);letter-spacing:-.035em}
+    .project-group-head p{margin:0;max-width:620px;color:var(--muted);font-size:.94rem}
+    .project-label{display:inline-flex;align-items:center;gap:7px;width:max-content;margin-bottom:9px;padding:6px 10px;border-radius:999px;font-size:.74rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:var(--primary2);border:1px solid rgba(92,214,192,.20);background:rgba(92,214,192,.06)}
+    .project-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .project-card.featured{grid-column:span 2}
+    .project-card h3{font-size:1.28rem;line-height:1.25}
+    .project-skills{display:grid;gap:8px;margin:16px 0 18px}
+    .project-skills div{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:.88rem}
+    .project-skills div::before{content:"✓";color:var(--primary2);font-weight:900}
+    .project-result{margin:16px 0;padding:13px 14px;border-radius:14px;border:1px solid rgba(92,214,192,.15);background:rgba(92,214,192,.045);color:#dfe8f5;font-size:.90rem}
+    .project-result strong{color:var(--primary2)}
+    .project-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.80rem}
+    .project-status{color:var(--accent);font-weight:800}
+    @media (max-width:900px){
+      .project-grid-3{grid-template-columns:1fr 1fr}
+      .project-card.featured{grid-column:span 2}
+    }
+    @media (max-width:620px){
+      .project-group-head{display:block}
+      .project-group-head p{margin-top:10px}
+      .project-grid-3{grid-template-columns:1fr}
+      .project-card.featured{grid-column:span 1}
+    }
+
+    /* SKILLS */
+    .skills-layout{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .skill-card h3{
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:17px;
+    }
+
+    /* OBJECTIVE */
+    .objective-box{
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      padding:70px 28px;
+      border:1px solid rgba(92,214,192,.20);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(92,214,192,.15),transparent 42%),
+        linear-gradient(150deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    }
+
+    .objective-box span{
+      color:var(--primary2);
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+    }
+
+    .objective-box h2{
+      font-size:clamp(2.2rem,5vw,4.6rem);
+      max-width:920px;
+      margin:16px auto 0;
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .contact-card{padding:32px}
+    .contact-card h3{font-size:2rem;margin:0 0 12px}
+    .contact-card>p{color:var(--muted)}
+    .contact-lines{
+      display:grid;
+      gap:10px;
+      margin-top:24px;
+    }
+    .contact-line{
+      padding:13px 15px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+    }
+    .contact-line span{
+      display:block;
+      font-size:.75rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:3px;
+    }
+    .contact-line a:hover{color:var(--primary2)}
+
+    .contact-photo{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:100%;
+      border:1px solid var(--line);
+    }
+    .contact-photo img{
+      width:100%;height:100%;
+      object-fit:cover;
+      min-height:410px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:30px 0;
+      color:var(--muted);
+      font-size:.87rem;
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+
+    .photo-fallback{
+      display:none;
+      width:100%;
+      aspect-ratio:4/5;
+      border-radius:22px;
+      place-items:center;
+      text-align:center;
+      padding:30px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(92,214,192,.20), transparent 35%),
+        linear-gradient(145deg,#102241,#09162c);
+      border:1px solid var(--line);
+    }
+
+    .photo-fallback strong{
+      display:block;
+      font-size:clamp(2rem,5vw,4rem);
+      letter-spacing:-.05em;
+      color:var(--primary2);
+    }
+
+    .photo-fallback span{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .project-card,.btn{transition:none}
+    }
+
+    @media (max-width:900px){
+      nav{
+        position:absolute;
+        top:74px;
+        left:18px;right:18px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:18px;
+        border:1px solid var(--line);
+        border-radius:18px;
+        background:#0b1739;
+        box-shadow:var(--shadow);
+      }
+      nav.open{display:flex}
+      .menu-btn{display:block}
+      .hero-grid,.experience-main,.contact-grid,.highlight{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .metrics{grid-template-columns:1fr 1fr}
+      .metric:nth-child(2){border-right:none}
+      .metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .mini-card{left:14px}
+    }
+
+    @media (max-width:620px){
+      .section{padding:72px 0}
+      .grid-3,.grid-2,.skills-layout,.mission-grid{grid-template-columns:1fr}
+      .section-title{display:block}
+      .section-title p{margin-top:14px}
+      .metrics{grid-template-columns:1fr}
+      .metric{border-right:none;border-bottom:1px solid var(--line)!important}
+      .metric:last-child{border-bottom:none!important}
+      h1{font-size:clamp(3rem,18vw,5rem)}
+      .hero{min-height:auto;padding-top:58px}
+      .portrait-card{margin-top:14px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#accueil" aria-label="Retour à l'accueil">
+        <span class="logo-mark">EB</span>
+        <span>
+          <strong>Eutch Présence</strong>
+          <small>BITSINDOU</small>
+        </span>
+      </a>
+
+      <nav id="nav-menu" aria-label="Navigation principale">
+        <a href="#profil">Profil</a>
+        <a href="#formation">Formation</a>
+        <a href="#experience">Expérience</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <span class="availability"><i></i> Portfolio actuariel & data</span>
+
+            <h1>Eutch Présence<br>BITSINDOU</h1>
+
+            <h2>Actuariat · Tarification · Provisionnement · Data</h2>
+
+            <p>
+              Étudiant en Master 2 Actuariat à l’ENSAR et en Master 2 Actuariat au CNAM via la passerelle ENSAR-CNAM, et alternant chez
+              MAAF (Covéa), je développe une expertise appliquée aux problématiques de
+              <strong>provisionnement, tarification, solvabilité, analyse de données et gestion des risques</strong>.
+              Mon objectif : transformer les données en analyses fiables et utiles à la décision actuarielle.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#projets">Découvrir mes projets</a>
+              <a class="btn secondary" href="#contact">Me contacter</a>
+            </div>
+
+            <div class="hero-proof" aria-label="Domaines principaux">
+              <span><b>01</b> Assurance santé</span>
+              <span><b>02</b> Modélisation actuarielle</span>
+              <span><b>03</b> Data & reporting</span>
+            </div>
+          </div>
+
+          <div class="portrait-card reveal">
+            <img id="hero-photo" src="assets/profil.jpeg" alt="Portrait de Eutch Présence BITSINDOU"
+                 onerror="this.style.display='none';document.getElementById('hero-fallback').style.display='grid';" />
+            <div id="hero-fallback" class="photo-fallback" aria-label="Photo non disponible">
+              <div>
+                <strong>EB</strong>
+                <span>Eutch Présence BITSINDOU</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <strong>Alternant chez MAAF (Covéa)</strong>
+              <span>Technicien d’études et reporting · Santé individuelle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="metrics reveal" aria-label="Repères clés">
+        <div class="metric">
+          <strong>ENSAR</strong>
+          <span>Master 2 Actuariat · Université de Poitiers</span>
+        </div>
+        <div class="metric">
+          <strong>MAAF · Covéa</strong>
+          <span>Alternance en assurance santé depuis septembre 2025</span>
+        </div>
+        <div class="metric">
+          <strong>CNAM</strong>
+          <span>Master 2 Actuariat · Passerelle ENSAR-CNAM</span>
+        </div>
+        <div class="metric">
+          <strong>Stack Data</strong>
+          <span>Python · R · SQL · SAS · Excel · VBA · Power BI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFIL -->
+    <section id="profil" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">01 · Profil</span>
+            <h2>Un profil quantitatif orienté assurance</h2>
+          </div>
+          <p>
+            Une formation mathématique solide, renforcée par une expérience opérationnelle en assurance
+            et une pratique régulière des outils de données.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="icon">∑</div>
+            <h3>Rigueur quantitative</h3>
+            <p>
+              Mathématiques, statistiques et actuariat me permettent de structurer les problèmes,
+              formaliser les hypothèses et interpréter les résultats avec méthode.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">◈</div>
+            <h3>Expérience assurance</h3>
+            <p>
+              Chez MAAF (Covéa), je travaille sur des problématiques concrètes de provisionnement,
+              tarification et reporting en assurance santé.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">⌁</div>
+            <h3>Culture data</h3>
+            <p>
+              J’utilise Python, R, SQL, SAS, Excel, VBA et Power BI pour analyser, automatiser,
+              visualiser et restituer les résultats.
+            </p>
+          </article>
+        </div>
+
+        <div class="highlight reveal">
+          <h3>Mon positionnement</h3>
+          <p>
+            Je souhaite construire une expertise d’actuaire capable de relier les modèles, les données
+            et la réalité métier. Je m’intéresse particulièrement aux sujets où l’analyse quantitative
+            doit déboucher sur une décision claire : estimation du risque, provisions, tarification,
+            suivi de portefeuille et pilotage technique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation" class="section soft">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">02 · Formation</span>
+            <h2>Un parcours progressif vers l’actuariat</h2>
+          </div>
+          <p>
+            Des mathématiques fondamentales vers l’actuariat appliqué, avec une spécialisation
+            croissante en assurance, statistiques et gestion des risques.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="year">2026 – 2027</span>
+            <h3>Master 2 Actuariat — CNAM de Paris</h3>
+            <p>Passerelle ENSAR-CNAM, France.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2026 – 2027</span>
+            <h3>Master 2 Actuariat — ENSAR</h3>
+            <p>Université de Poitiers, campus de Niort, France.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2025 – 2026</span>
+            <h3>Master 1 Actuariat — ENSAR</h3>
+            <p>Université de Poitiers, campus de Niort, France.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2024 – 2025</span>
+            <h3>Licence Mathématiques, Statistique et Applications</h3>
+            <p>Université de Poitiers, France — Mention Bien.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2023 – 2024</span>
+            <h3>Master 1 Mathématiques Pures</h3>
+            <p>Université Marien Ngouabi, Congo — Mention Bien.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2020 – 2023</span>
+            <h3>Licence Mathématiques Fondamentales</h3>
+            <p>Université Marien Ngouabi, Congo — Mention Bien.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="year">2019 – 2020</span>
+            <h3>Baccalauréat scientifique — Mathématiques</h3>
+            <p>Lycée Emery Patrice Lumumba, Congo — Mention Assez Bien.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">03 · Expérience</span>
+            <h2>De la théorie aux problématiques métier</h2>
+          </div>
+          <p>
+            Une expérience qui combine analyse actuarielle, données réelles, restitution des résultats
+            et compréhension opérationnelle de l’assurance.
+          </p>
+        </div>
+
+        <div class="experience-main reveal">
+          <div>
+            <span class="company">MAAF · Covéa</span>
+            <h3>Alternant — Technicien d’études et reporting</h3>
+            <p class="date">Depuis septembre 2025 · Chauray, France</p>
+            <p>
+              Au sein de la direction Prévoyance Santé Individuelle, je participe à des travaux
+              de provisionnement et de tarification réalisés à partir de données réelles.
+            </p>
+          </div>
+
+          <div class="mission-grid">
+            <div>
+              <h4>Provisionnement</h4>
+              <ul>
+                <li>Estimation et suivi des provisions techniques.</li>
+                <li>Analyse des PSAP et des charges ultimes.</li>
+                <li>Comparaison de méthodes de projection.</li>
+                <li>Chain Ladder et London Chain.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4>Tarification & analyse</h4>
+              <ul>
+                <li>Segmentation de primes pures.</li>
+                <li>Analyses par tranches d’âge.</li>
+                <li>Étude de la structure du risque.</li>
+                <li>Production et restitution de résultats.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Stage en apprentissage statistique</h3>
+            <p class="date">Université de Poitiers · Mai 2025 – Juin 2025</p>
+            <p>
+              Développement de modèles statistiques avec R, analyse des résultats et travail
+              d’interprétation.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Chef de projet — Welcome Hub</h3>
+            <p class="date">Université de Poitiers · Sept. 2024 – Mars 2025</p>
+            <p>
+              Conception d’une plateforme destinée aux étudiants internationaux, coordination d’équipe,
+              suivi du design, du contenu et du développement.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Professeur de soutien en mathématiques</h3>
+            <p class="date">L’Excellence · Juil. 2021 – Août 2024</p>
+            <p>
+              Accompagnement d’élèves, pédagogie progressive et développement d’une communication
+              structurée autour de notions mathématiques.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section soft">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">04 · Projets</span>
+            <h2>Des projets qui traduisent mes compétences en réalisations</h2>
+          </div>
+          <p>
+            Mes projets académiques consolident mes bases actuarielles. Mes projets personnels
+            me permettent d’expérimenter, d’automatiser et de construire des outils utiles.
+          </p>
+        </div>
+
+        <div class="project-group">
+          <div class="project-group-head reveal">
+            <div>
+              <span class="project-label">Projets académiques</span>
+              <h3>Actuariat, assurance et modélisation</h3>
+            </div>
+            <p>Travaux réalisés dans le cadre de l’ENSAR, du CNAM et de projets universitaires.</p>
+          </div>
+
+          <div class="project-grid-3">
+            <article class="project-card featured reveal">
+              <div class="project-top"><div class="project-number">A01</div><span class="project-badge">Provisionnement non-vie</span></div>
+              <h3>Provisionnement MRH — comparaison de méthodes actuarielles</h3>
+              <p>Étude de provisionnement en multirisque habitation à partir de triangles de sinistres, avec comparaison de plusieurs méthodes déterministes et stochastiques.</p>
+              <div class="project-skills">
+                <div>Construction et contrôle des triangles de développement.</div>
+                <div>Estimation des charges ultimes et des provisions.</div>
+                <div>Comparaison des méthodes et interprétation des écarts.</div>
+              </div>
+              <div class="project-result"><strong>Ce que le projet démontre :</strong> passer de données de sinistres à une estimation actuarielle argumentée et comparer plusieurs approches.</div>
+              <div class="chips"><span>Chain Ladder</span><span>Mack</span><span>Bootstrap</span><span>Bornhuetter-Ferguson</span><span>Cape Cod</span></div>
+              <div class="project-footer"><span>Projet ENSAR</span><span class="project-status">Actuariat non-vie</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">A02</div><span class="project-badge">Santé collective</span></div>
+              <h3>Étude PSC — Université de Poitiers</h3>
+              <p>Analyse d’un futur contrat de complémentaire santé collective dans le contexte de la protection sociale complémentaire des agents publics.</p>
+              <div class="project-skills">
+                <div>Analyse de la population de référence et de l’exposition.</div>
+                <div>Étude des dispenses, ayants droit et hypothèses d’adhésion.</div>
+                <div>Identification des enjeux tarifaires et budgétaires.</div>
+              </div>
+              <div class="chips"><span>Assurance santé</span><span>Exposition</span><span>Tarification</span><span>Analyse RH</span></div>
+              <div class="project-footer"><span>Projet universitaire</span><span class="project-status">Santé</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">A03</div><span class="project-badge">Assurance vie</span></div>
+              <h3>Assurance emprunteur — capital décroissant</h3>
+              <p>Modélisation d’une assurance emprunteur décès associée à un capital restant dû, avec prise en compte des paramètres financiers et actuariels du contrat.</p>
+              <div class="project-skills">
+                <div>Construction du capital restant dû.</div>
+                <div>Calcul actuariel des primes et engagements.</div>
+                <div>Analyse de l’effet des hypothèses techniques.</div>
+              </div>
+              <div class="chips"><span>Assurance emprunteur</span><span>CRD</span><span>Taux technique</span><span>Tarification</span></div>
+              <div class="project-footer"><span>Projet ENSAR / CNAM</span><span class="project-status">Assurance vie</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">A04</div><span class="project-badge">Data & territoire</span></div>
+              <h3>Data Challenge ENSAR — déserts médicaux</h3>
+              <p>Étude territoriale de l’accessibilité aux soins à partir de données géographiques et statistiques, avec production de visualisations.</p>
+              <div class="project-skills">
+                <div>Préparation de données multi-sources.</div>
+                <div>Cartographie et analyse géographique.</div>
+                <div>Restitution visuelle des résultats.</div>
+              </div>
+              <div class="chips"><span>Python</span><span>Power BI</span><span>Cartographie</span><span>Excel</span></div>
+              <div class="project-footer"><span>Data Challenge ENSAR</span><span class="project-status">Data</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">A05</div><span class="project-badge">Statistique spatiale</span></div>
+              <h3>Analyse spatiale et géostatistique avec R</h3>
+              <p>Exploitation de données géographiques avec R afin d’étudier les structures spatiales, construire des cartes et identifier des tendances territoriales.</p>
+              <div class="project-skills">
+                <div>Traitement de données géospatiales.</div>
+                <div>Analyse statistique spatiale.</div>
+                <div>Création de cartes et datavisualisations.</div>
+              </div>
+              <div class="chips"><span>R</span><span>Géostatistique</span><span>Dataviz</span></div>
+              <div class="project-footer"><span>Projet académique</span><span class="project-status">Statistiques</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-group">
+          <div class="project-group-head reveal">
+            <div>
+              <span class="project-label">Projets personnels</span>
+              <h3>Expérimenter, automatiser et construire</h3>
+            </div>
+            <p>Des projets développés pour approfondir mes compétences techniques et créer des réalisations directement présentables à un recruteur.</p>
+          </div>
+
+          <div class="project-grid-3">
+            <article class="project-card featured reveal">
+              <div class="project-top"><div class="project-number">P01</div><span class="project-badge">Tarification automobile</span></div>
+              <h3>Projet complet de tarification automobile par GLM</h3>
+              <p>Construction progressive d’un modèle de fréquence automobile à partir d’un portefeuille de contrats : exploration des données, traitement de l’exposition, segmentation, modélisation et validation hors échantillon.</p>
+              <div class="project-skills">
+                <div>GLM de Poisson avec offset logarithmique de l’exposition.</div>
+                <div>Étude de l’âge, du bonus-malus et de la zone.</div>
+                <div>Comparaison de modèles par déviance et contrôle de calibration.</div>
+                <div>Découpage apprentissage, validation et test.</div>
+              </div>
+              <div class="project-result"><strong>Objectif :</strong> reproduire une démarche de tarification non-vie proche d’un cas métier et pouvoir justifier chaque choix de modélisation.</div>
+              <div class="chips"><span>Python</span><span>Statsmodels</span><span>GLM</span><span>Poisson</span><span>Validation</span><span>Data analysis</span></div>
+              <div class="project-footer"><span>Projet personnel actuariel</span><span class="project-status">Enrichissement continu</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">P02</div><span class="project-badge">Outil actuariel</span></div>
+              <h3>Application de provisionnement actuariel</h3>
+              <p>Conception d’un outil permettant d’automatiser des calculs de provisionnement et de comparer plusieurs méthodes à partir d’un même jeu de données.</p>
+              <div class="project-skills">
+                <div>Automatisation des calculs actuariels.</div>
+                <div>Comparaison structurée des résultats.</div>
+                <div>Réflexion sur la restitution et l’aide à la décision.</div>
+              </div>
+              <div class="chips"><span>Chain Ladder</span><span>Mack</span><span>Bootstrap</span><span>BF</span></div>
+              <div class="project-footer"><span>Projet personnel</span><span class="project-status">Actuariat</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">P03</div><span class="project-badge">Cartographie interactive</span></div>
+              <h3>Carte interactive de Niort</h3>
+              <p>Création d’une carte interactive destinée à représenter des points d’intérêt et des informations locales à partir de données géographiques.</p>
+              <div class="project-skills">
+                <div>Nettoyage et préparation de données géographiques.</div>
+                <div>Création de couches et de marqueurs interactifs.</div>
+                <div>Organisation de l’information pour une lecture intuitive.</div>
+              </div>
+              <div class="chips"><span>Python</span><span>Folium</span><span>OpenStreetMap</span><span>Cartographie</span></div>
+              <div class="project-footer"><span>Projet personnel data</span><span class="project-status">Géodata</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">P04</div><span class="project-badge">Projet digital</span></div>
+              <h3>Welcome Hub</h3>
+              <p>Projet de plateforme visant à faciliter l’intégration des étudiants internationaux à Poitiers, avec travail sur la conception, le contenu et la coordination de projet.</p>
+              <div class="project-skills">
+                <div>Identification des besoins utilisateurs.</div>
+                <div>Coordination d’équipe et suivi du développement.</div>
+                <div>Structuration de l’information et de l’expérience utilisateur.</div>
+              </div>
+              <div class="chips"><span>Gestion de projet</span><span>Web</span><span>UX</span><span>Coordination</span></div>
+              <div class="project-footer"><span>Projet digital</span><span class="project-status">Gestion de projet</span></div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-top"><div class="project-number">P05</div><span class="project-badge">Web</span></div>
+              <h3>Portfolio actuariel personnel</h3>
+              <p>Développement de ce portfolio afin de présenter de manière structurée mon parcours, mes compétences, mes expériences et mes projets aux recruteurs.</p>
+              <div class="project-skills">
+                <div>Conception responsive en HTML, CSS et JavaScript.</div>
+                <div>Structuration d’un parcours professionnel orienté recrutement.</div>
+                <div>Amélioration de l’accessibilité et de l’expérience utilisateur.</div>
+              </div>
+              <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive design</span></div>
+              <div class="project-footer"><span>Projet personnel</span><span class="project-status">Portfolio</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">05 · Compétences</span>
+            <h2>Une boîte à outils actuarielle et data</h2>
+          </div>
+          <p>
+            Des compétences techniques complétées par la capacité à structurer une analyse,
+            travailler en équipe et présenter des résultats.
+          </p>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-card reveal">
+            <h3>Actuariat & risque</h3>
+            <div class="skill-tags">
+              <span>Provisionnement</span>
+              <span>Tarification</span>
+              <span>Solvabilité</span>
+              <span>Gestion actif/passif</span>
+              <span>Analyse du risque</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Programmation & data</h3>
+            <div class="skill-tags">
+              <span>Python</span>
+              <span>R</span>
+              <span>SQL</span>
+              <span>SAS</span>
+              <span>Excel</span>
+              <span>VBA</span>
+              <span>C++</span>
+              <span>Power BI</span>
+              <span>Git</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Compétences transversales</h3>
+            <div class="skill-tags">
+              <span>Rigueur</span>
+              <span>Autonomie</span>
+              <span>Gestion de projet</span>
+              <span>Travail en équipe</span>
+              <span>Communication</span>
+              <span>Organisation</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Langues & certification</h3>
+            <div class="skill-tags">
+              <span>Français — Langue maternelle</span>
+              <span>Anglais — Niveau B1</span>
+              <span>Certification PIX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBJECTIF -->
+    <section class="section">
+      <div class="container">
+        <div class="objective-box reveal">
+          <span>Objectif professionnel</span>
+          <h2>Devenir actuaire et construire une expertise solide en gestion du risque.</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section soft">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <span class="eyebrow">06 · Contact</span>
+            <h2>Échangeons autour de l’actuariat</h2>
+          </div>
+          <p>
+            Je suis ouvert aux échanges sur le provisionnement, la tarification, la data,
+            la modélisation et les métiers du risque.
+          </p>
+        </div>
+
+        <div class="contact-grid reveal">
+          <div class="contact-card">
+            <h3>Me contacter</h3>
+            <p>
+              Pour une opportunité, un projet, un échange professionnel ou une discussion autour
+              de l’actuariat et de la data.
+            </p>
+
+            <div class="contact-lines">
+              <div class="contact-line">
+                <span>Email</span>
+                <a href="mailto:eutchpresencebitsindou@gmail.com">eutchpresencebitsindou@gmail.com</a>
+              </div>
+
+              <div class="contact-line">
+                <span>Localisation</span>
+                Niort, France
+              </div>
+
+              <div class="contact-line">
+                <span>Téléphone</span>
+                <a href="tel:+33744223248">07 44 22 32 48</a>
+              </div>
+
+              <div class="contact-line">
+                <span>LinkedIn</span>
+                Eutch Présence BITSINDOU
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-photo">
+            <img id="contact-photo-img" src="assets/profil.jpeg" alt="Eutch Présence BITSINDOU"
+                 onerror="this.style.display='none';document.getElementById('contact-fallback').style.display='grid';" />
+            <div id="contact-fallback" class="photo-fallback" aria-label="Photo non disponible" style="min-height:410px;border-radius:0;">
+              <div>
+                <strong>EB</strong>
+                <span>Eutch Présence BITSINDOU</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Eutch Présence BITSINDOU</span>
+      <span>Actuariat · Data · Gestion des risques</span>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const menuButton = document.getElementById("menu-btn");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    // Apparition progressive avec solution de secours pour les anciens navigateurs
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.10 });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add("visible"));
+    }
+
+    // Lien actif dans la navigation
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navLinks = [...document.querySelectorAll("#nav-menu a")];
+
+    if ("IntersectionObserver" in window) {
+      const activeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            const active = navLinks.find(link => link.getAttribute("href") === "#" + entry.target.id);
+            if (active) active.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-42% 0px -50% 0px" });
+
+      sections.forEach(section => activeObserver.observe(section));
+    }
+
+    // Année automatique
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
